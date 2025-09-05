@@ -14,9 +14,10 @@ def count_characters(text):
 def get_sorted_characters(text):
     dict = count_characters(text)
     arr = []
-    for x in dict:
-        temp = {"char": x, "count": dict[x]}
-        arr.append(temp)
+    for x in dict.keys():
+        if x.isalpha():
+            temp = {"char": x, "num": dict[x]}
+            arr.append(temp)
 
     def sort_on(items):
         return items["num"]
